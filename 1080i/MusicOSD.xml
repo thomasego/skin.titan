@@ -1,0 +1,7 @@
+﻿<!--Titan-->
+<window id="120">
+	<defaultcontrol>-</defaultcontrol>
+	<onload>Dialog.Close(MusicOSD.xml)</onload>
+	<controls>	
+	</controls>
+</window>

@@ -1,0 +1,161 @@
+<includes>		
+	<include name="View_52_Panel">
+
+		<!-- Panel -->		
+		<control type="group">	
+			<visible>Control.IsVisible(52)</visible>				
+			<include>animation_view_change</include>	
+			<include>animation_list</include>
+
+			<control type="image">	<!-- Albums -->	
+				<visible>Container.content(albums)</visible>
+				<posx>10</posx>
+				<posy>220</posy>
+				<width>1903</width>
+				<height>790</height>				
+				<texture>views/view_52_panel_noinfo.png</texture>					
+			</control>	
+		</control>
+
+		<!-- View 52 -->		
+		<control type="group">	
+			<visible>Control.IsVisible(52)</visible>
+			<include>animation_view_change</include>	
+			<include>animation_list</include>	
+
+			<!-- ID="52" -->		
+			<control type="panel" id="52">					
+				<posx>0</posx>
+				<posy>320</posy>
+				<width>1900</width>
+				<height>580</height>
+				<onup>52</onup>
+				<ondown>52</ondown>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<pagecontrol>60</pagecontrol>	
+				<viewtype label="Wall">Wall</viewtype>
+				<scrolltime tween="Cubic" easing="inout">500</scrolltime>
+				<focusposition>0</focusposition>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+
+				<!-- =======-->
+				<!-- Movies -->
+				<!-- ======= -->
+				<itemlayout height="320" width="230" condition="Container.Content(movies)">								
+					<control type="image"><!--Poster-->						
+						<width>200</width>
+						<height>294</height>
+						<texture background="true" fallback="poster_default.png" diffuse="poster_matte.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>							
+				</itemlayout>	
+				<focusedlayout height="320" width="230" condition="Container.Content(movies)">	
+					<control type="image"><!--Poster-->
+						<animation type="focus">			
+							<effect type="zoom"  start="100" end="110" center="130,190" time="150"/>
+						</animation>
+						<animation type="unfocus">			
+							<effect type="zoom"  start="110" end="100" center="130,190" time="150"/>
+						</animation>
+						<width>200</width>
+						<height>294</height>					
+						<texture background="true" fallback="poster_default.png" diffuse="poster_matte.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>						
+				</focusedlayout>
+
+				<!-- ====== -->
+				<!-- Albums -->
+				<!-- ====== -->
+				<itemlayout height="290" width="290" condition="Container.Content(albums)">								
+					<control type="image"><!--Cover-->
+						<posx>90</posx>
+						<width>290</width>
+						<height>290</height>					
+						<texture background="true" fallback="cover_default.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>							
+				</itemlayout>
+				<focusedlayout height="290" width="290" condition="Container.Content(albums)">						
+					<control type="image"><!--Cover-->
+						<animation type="focus">			
+							<effect type="zoom"  start="100" end="110" center="235,145" time="250"/>
+						</animation>
+						<animation type="unfocus">			
+							<effect type="zoom"  start="110" end="100" center="235,145" time="100"/>
+						</animation>
+						<posx>90</posx>
+						<width>290</width>
+						<height>290</height>					
+						<texture background="true" fallback="cover_default.png" diffuse="cover_panel_matte_fo.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>	
+					<control type="image"><!--Focus-->
+						<animation type="focus">			
+							<effect type="zoom"  start="100" end="110" center="235,145" time="250"/>
+							<effect type="fade"  start="0" end="100"  time="150"/>
+						</animation>
+						<animation type="unfocus">			
+							<effect type="zoom"  start="110" end="100" center="235,145" time="100"/>
+							<effect type="fade"  start="0" end="100"  time="0"/>
+						</animation>
+						<posx>90</posx>
+						<width>290</width>
+						<height>290</height>					
+						<texture background="true">cover_panel_fo.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>	
+
+				</focusedlayout>
+			</control>
+		</control>
+
+		<control type="group">		<!-- Title -->	
+			<visible>Control.IsVisible(52)</visible>
+			<include>animation_view_change</include>	
+			<include>animation_list</include>
+			<posy>955</posy>			
+			<control type="label">				
+				<posx>130</posx>
+				<posy>0</posy> 		
+				<width>600</width>
+				<font>Bold30Big</font>			
+				<textcolor>black</textcolor>
+				<label>$INFO[ListItem.Label]</label>	
+			</control>			
+		</control>
+		<control type="group">		<!-- Album -->	
+			<visible>Control.IsVisible(52)</visible>	
+			<include>animation_view_change</include>	
+			<include>animation_list</include>
+			<posy>955</posy>					
+			<control type="label">					
+				<posx>560</posx>
+				<posy>0</posy> 		
+				<width>800</width>
+				<align>center</align>
+				<font>Bold34Big</font>			
+				<textcolor>black</textcolor>
+				<label>$INFO[ListItem.Label2]</label>	
+			</control>			
+		</control>
+		<control type="group">		<!-- Page Control -->	
+			<visible>Control.IsVisible(52)</visible>
+			<include>animation_view_change</include>	
+			<include>animation_list</include>
+			<posy>955</posy>					
+			<control type="label">					
+				<posx>1780</posx>
+				<posy>0</posy> 		
+				<width>400</width>
+				<align>right</align>
+				<font>Bold30Big</font>			
+				<textcolor>black</textcolor>
+				<label>$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
+			</control>			
+		</control>
+
+	</include>
+</includes>

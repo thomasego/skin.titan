@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+	id="skin.titan"
+	version="1.5.0"
+	name="Titan"
+	provider-name="reazorFX">
+	<requires>
+		<import version="4.0.0" addon="xbmc.gui"/>		
+		<import addon="script.artwork.downloader" version="12.0.15" />
+	</requires>
+	<extension
+    point="xbmc.gui.skin"
+    defaultthemename="textures.xbt"
+    debugging="false"
+    effectslowdown="0.75">		
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary>Titan by reazorFX</summary>
+		<description>Titan is a port from Mediaportal to XBMC all thanks goes to: joostzilla, ncoH, Dlarge500, elliotmc and Team Mediaportal for this great Skin!</description>
+	</extension>
+</addon>

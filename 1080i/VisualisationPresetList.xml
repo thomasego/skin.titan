@@ -1,0 +1,7 @@
+<!--Titan-->
+<window id="122">
+	<defaultcontrol>-</defaultcontrol>	
+	<onload>Dialog.Close(VisualisationPresetList.xml)</onload>	
+	<controls>
+	</controls>
+</window>
